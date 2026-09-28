@@ -1,0 +1,199 @@
+APEX.
+
+Hello. How are you?
+
+Before we begin, tell me briefly what you can do.
+
+Open a new terminal.
+
+Open three more terminals.
+
+Arrange all terminal windows in a grid.
+
+List all open windows.
+
+Focus terminal two.
+
+Open top on terminal two.
+
+Focus terminal three.
+
+Run D F dash H on terminal three and show me the disk usage.
+
+Focus terminal one.
+
+Show me all network interfaces and their IP addresses.
+
+Now show me the current routing table.
+
+Tell me which interface is being used as the default route.
+
+On terminal four, ping eight dot eight dot eight dot eight.
+
+Let the ping run for a few seconds.
+
+Stop the ping.
+
+On terminal four, run a traceroute to eight dot eight dot eight dot eight.
+
+Now check the DNS configuration of this machine.
+
+Resolve open A I dot com.
+
+Show me which DNS server answered the request.
+
+Focus terminal two.
+
+Show me the five processes currently consuming the most CPU.
+
+Now show me the five processes consuming the most memory.
+
+Tell me if anything looks unusual.
+
+Minimize terminal two.
+
+Move terminal three and terminal four to virtual desktop two.
+
+Switch to virtual desktop two.
+
+Arrange the windows side by side.
+
+Focus terminal three.
+
+Show me the mounted file systems.
+
+Check the available space in my home directory.
+
+Now check the system uptime and load average.
+
+Tell me how long this machine has been running.
+
+Open the file manager.
+
+Open my home directory.
+
+Find all files containing the word APEX in their filename.
+
+Sort the results by modification date.
+
+Open the newest one.
+
+Close the file manager.
+
+Open Notepad.
+
+Create a new note called System Inspection Report.
+
+Write the current date and time at the top.
+
+Add a heading called System Status.
+
+Under System Status, summarize the CPU load, memory usage, disk usage, network configuration, and system uptime that we just inspected.
+
+Add another heading called Observations.
+
+Write down anything unusual you observed during the inspection.
+
+Add another heading called Recommended Actions.
+
+Based on the information you collected, add three sensible system administration recommendations.
+
+Save the document as APEX System Inspection Report.
+
+Now switch to the research skill.
+
+Search the web for the latest stable Linux kernel release.
+
+Tell me the current stable version and when it was released.
+
+Compare that version with the kernel running on this machine.
+
+Tell me whether this machine is significantly behind the current stable kernel.
+
+Do not install or upgrade anything.
+
+Open Notepad again.
+
+Append a section called Kernel Comparison.
+
+Write the installed kernel version, the latest stable kernel version, and a short explanation of the difference.
+
+Save the document.
+
+Now search the web for the three most important Linux security vulnerabilities disclosed recently.
+
+Give me a short technical summary of each vulnerability.
+
+Include the affected component and severity where available.
+
+Do not run any exploit code.
+
+Add a new section to the report called Recent Linux Security Issues.
+
+Summarize those vulnerabilities there.
+
+Save the report again.
+
+Now return to the desktop.
+
+Restore terminal two.
+
+Switch to virtual desktop one.
+
+Focus terminal one.
+
+Show me all listening TCP and UDP ports.
+
+Identify which processes own those listening ports.
+
+Tell me which services are exposed on all network interfaces.
+
+Do not change the firewall.
+
+Now show me the firewall status.
+
+If the firewall is enabled, show me the active rules.
+
+Do not modify them.
+
+Check whether SSH is running.
+
+Tell me which port SSH is listening on.
+
+Check the last ten successful login sessions.
+
+Now show me failed login attempts from the system logs, if they are available.
+
+Do not make any changes.
+
+Give me a short security assessment based only on what you have actually observed.
+
+Open Notepad.
+
+Add a heading called Security Review.
+
+Write your findings underneath it.
+
+Save the report.
+
+Now remember that this machine is called Event Horizon and that I prefer system administration reports to be concise and technical.
+
+Tell me what you just remembered.
+
+Now close Notepad.
+
+Minimize all terminal windows.
+
+List the open windows.
+
+Restore all windows.
+
+Arrange them in a grid.
+
+Give me a final summary of everything we accomplished during this session.
+
+Tell me which actions were local desktop commands, which required terminal execution, and which required AI reasoning or web research.
+
+Finally, tell me whether any command changed the system configuration.
+
+APEX, go to sleep.

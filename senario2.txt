@@ -1,0 +1,281 @@
+﻿APEX.
+
+We are going to perform a Linux systems inspection.
+
+Important rule for this entire session: do not install, remove, modify, restart, kill, delete, overwrite, or reconfigure anything.
+
+Use read-only commands only.
+
+If a command could change the system, stop and explain before running it.
+
+Open four terminals.
+
+Arrange them in a grid.
+
+Use terminal one for operating system and hardware inspection.
+
+Use terminal two for networking.
+
+Use terminal three for services and logs.
+
+Use terminal four for storage and performance.
+
+Focus terminal one.
+
+Show me the hostname, kernel version, architecture, and operating system release.
+
+Run uname dash a.
+
+Now show me the contents of slash etc slash os dash release.
+
+Show me the CPU model, number of sockets, cores, threads, virtualization flags, and current architecture.
+
+Use lscpu.
+
+Now show me total memory, available memory, buffers, cache, and swap.
+
+Use free dash h.
+
+Show me the physical memory devices if permissions allow it.
+
+Use sudo dmidecode dash t memory only if sudo access already exists and the command requires no configuration changes.
+
+Do not ask for or store any password.
+
+If that is not possible, skip it.
+
+Now inspect the PCI devices.
+
+Use lspci.
+
+Filter the output for VGA, network, storage, and USB controllers.
+
+Now show me the currently loaded kernel modules.
+
+Use lsmod.
+
+Search the module list for NVIDIA, Nouveau, Wi-Fi, Bluetooth, virtualization, and filesystem modules.
+
+Tell me which relevant modules are loaded.
+
+Now show me the kernel command line.
+
+Read slash proc slash cmdline.
+
+Explain any unusual boot parameters you find.
+
+Do not change them.
+
+Now show me recent kernel messages.
+
+Use journalctl dash k dash b dash n fifty with no pager.
+
+If journalctl is unavailable, use dmesg and show only the last fifty lines.
+
+Summarize warnings and errors only.
+
+Ignore normal informational messages.
+
+Focus terminal two.
+
+Show me every network interface.
+
+Use ip dash brief address.
+
+Now show me the full IP configuration.
+
+Use ip addr show.
+
+Show me the routing table.
+
+Use ip route show.
+
+Identify the default gateway and the interface used for the default route.
+
+Show me the neighbour table.
+
+Use ip neigh show.
+
+Tell me which devices are currently known on the local network.
+
+Do not probe or scan any host.
+
+Now show me the DNS resolver configuration.
+
+Use resolvectl status if available.
+
+Otherwise read slash etc slash resolv dot conf.
+
+Identify the DNS servers and search domains.
+
+Resolve example dot com using getent hosts.
+
+Then resolve example dot com using dig if dig is already installed.
+
+Do not install dig if it is missing.
+
+Compare the two results.
+
+Now test basic external connectivity without scanning.
+
+Ping one dot one dot one dot one exactly four times.
+
+Then ping example dot com exactly four times.
+
+Compare packet loss and latency.
+
+If ping is blocked, explain that instead of retrying aggressively.
+
+Now run tracepath example dot com.
+
+If tracepath is unavailable, use traceroute only if it is already installed.
+
+Do not install anything.
+
+Show me active TCP and UDP listening sockets.
+
+Use ss dash t u l p n.
+
+Do not use netstat unless ss is unavailable.
+
+Tell me which services are bound to zero dot zero dot zero dot zero or double colon.
+
+Identify which listeners are exposed on all interfaces.
+
+Do not modify the firewall.
+
+Now show established TCP connections.
+
+Use ss dash t n state established.
+
+Summarize remote addresses and local ports.
+
+Do not connect to any of them.
+
+Focus terminal three.
+
+Show me the current systemd state.
+
+Use systemctl is dash system dash running.
+
+Now list failed services.
+
+Use systemctl dash dash failed.
+
+If there are failed units, show the status of each one without restarting anything.
+
+Now list currently running services.
+
+Use systemctl list dash units dash dash type equals service dash dash state equals running dash dash no dash pager.
+
+Summarize the most important services.
+
+Identify anything related to SSH, Docker, PostgreSQL, Redis, Nginx, Apache, Kubernetes, cron, system logging, and desktop services.
+
+Now inspect SSH status.
+
+Use systemctl status ssh dash dash no dash pager if SSH exists.
+
+Do not restart it.
+
+Show me the configured SSH listening ports.
+
+Use ss and the SSH process information already collected.
+
+Do not edit sshd configuration.
+
+Now show recent authentication events.
+
+Use journalctl dash u ssh dash n fifty dash dash no dash pager.
+
+If that service name does not exist, try sshd.
+
+Do not search beyond the local machine.
+
+Summarize successful logins, failed logins, and repeated authentication failures.
+
+Do not display full passwords, secrets, tokens, or private keys if anything sensitive appears in logs.
+
+Now inspect the last login history.
+
+Use last dash n twenty.
+
+Show failed login history with lastb dash n twenty only if permissions allow it.
+
+Do not change permissions.
+
+Now show recent system warnings and errors.
+
+Use journalctl dash p warning dot dot alert dash b dash n one hundred dash dash no dash pager.
+
+Group the results into kernel, hardware, storage, networking, authentication, and application issues.
+
+Ignore duplicate messages.
+
+Focus terminal four.
+
+Show mounted filesystems.
+
+Use findmnt.
+
+Now show filesystem capacity.
+
+Use df dash h T.
+
+Identify filesystems above eighty percent usage.
+
+Do not delete anything.
+
+Now show inode usage.
+
+Use df dash i.
+
+Identify filesystems above eighty percent inode utilization.
+
+Now inspect the top-level disk usage under slash home.
+
+Use du dash x dash h dash max dash depth equals one slash home.
+
+If permission errors occur, report them and continue.
+
+Do not use sudo unless already authorized.
+
+Now inspect my home directory only.
+
+Show the ten largest directories inside my home directory.
+
+Use du, sort, and head.
+
+Do not descend into mounted external filesystems.
+
+Now show the twenty largest regular files in my home directory.
+
+Use find with dash xdev.
+
+Do not search slash proc, slash sys, or slash dev.
+
+Do not open any file contents.
+
+Report filename and size only.
+
+Now inspect block devices.
+
+Use lsblk dash o NAME comma SIZE comma TYPE comma FSTYPE comma MOUNTPOINTS comma MODEL.
+
+Tell me which disk contains the root filesystem.
+
+Now show disk health information only if smartctl is already installed and permissions allow it.
+
+Use smartctl dash H on the primary physical disk.
+
+Do not run long tests.
+
+Do not start self-tests.
+
+Only report the current health status.
+
+Now inspect current system load.
+
+Use uptime.
+
+Then run vmstat
